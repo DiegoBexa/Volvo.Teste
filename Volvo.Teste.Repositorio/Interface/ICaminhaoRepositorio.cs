@@ -7,5 +7,6 @@ namespace Volvo.Teste.Repositorio.Interface
     {
         IEnumerable<Caminhao> ListarTodos();
         Caminhao BuscarPorId(int prmId);
+        Caminhao BuscarPorIdAsNoTracking(int prmId);
     }
 }

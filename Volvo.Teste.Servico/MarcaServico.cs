@@ -38,7 +38,7 @@ namespace Volvo.Teste.Servico
             if (prmId == 0)
                 throw new Exception("Id não pode ser igual a 0");
 
-            Marca _marca = _marcaRepositorio.BuscarPorId(prmId);
+            Marca _marca = _marcaRepositorio.BuscarPorIdAsNoTracking(prmId);
 
             if (_marca == null)
                 throw new Exception("Marca não encontrada");

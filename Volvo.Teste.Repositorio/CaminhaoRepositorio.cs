@@ -17,9 +17,14 @@ namespace Volvo.Teste.Repositorio
 
         public Caminhao BuscarPorId(int prmId)
         {
-            return _objContexto.Caminhao.Include(x => x.Marca)
-                                        .Include(x => x.Modelo)
-                                        .FirstOrDefault(x => x.Id == prmId);
+            return _objContexto.Caminhao.FirstOrDefault(x => x.Id == prmId);
+        }
+
+        public Caminhao BuscarPorIdAsNoTracking(int prmId)
+        {
+            return _objContexto.Caminhao.AsNoTracking().Include(x => x.Marca)
+                                                       .Include(x => x.Modelo)
+                                                       .FirstOrDefault(x => x.Id == prmId);
         }
 
         public IEnumerable<Caminhao> ListarTodos()

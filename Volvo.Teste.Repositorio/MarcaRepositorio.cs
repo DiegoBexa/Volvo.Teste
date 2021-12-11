@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using Volvo.Teste.Dominio;
 using Volvo.Teste.Repositorio.ContextoDb;
 using Volvo.Teste.Repositorio.Interface;
@@ -15,6 +16,11 @@ namespace Volvo.Teste.Repositorio
         public Marca BuscarPorId(int prmId)
         {
             return _objContexto.Marca.FirstOrDefault(x => x.Id == prmId);
+        }
+
+        public Marca BuscarPorIdAsNoTracking(int prmId)
+        {
+            return _objContexto.Marca.AsNoTracking().FirstOrDefault(x => x.Id == prmId);
         }
     }
 }

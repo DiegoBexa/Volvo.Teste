@@ -46,7 +46,7 @@ namespace Volvo.Teste.Servico
             if (prmId == 0)
                 throw new Exception("Id não pode ser igual a 0");
 
-            Caminhao _caminhao = _caminhaoRepositorio.BuscarPorId(prmId);
+            Caminhao _caminhao = _caminhaoRepositorio.BuscarPorIdAsNoTracking(prmId);
 
             if (_caminhao == null)
                 throw new Exception("Caminhão não encontrado");
@@ -78,7 +78,7 @@ namespace Volvo.Teste.Servico
 
             ValidacaoDados(prmCaminhaoViewModel);
 
-            Caminhao _caminhao = _caminhaoRepositorio.Buscar(x => x.Id == prmCaminhaoViewModel.Id);
+            Caminhao _caminhao = _caminhaoRepositorio.BuscarPorId(prmCaminhaoViewModel.Id);
 
             if (_caminhao == null)
                 throw new Exception("Caminhão não encontrado");
@@ -109,7 +109,7 @@ namespace Volvo.Teste.Servico
                 throw new Exception("Marca inválida !");
             else
             {
-                var marca = _marcaRepositorio.BuscarPorId(prmCaminhaoViewModel.MarcaId);
+                var marca = _marcaRepositorio.BuscarPorIdAsNoTracking(prmCaminhaoViewModel.MarcaId);
 
                 if (marca == null)
                     throw new Exception("Marca não encontrada !");
@@ -119,7 +119,7 @@ namespace Volvo.Teste.Servico
                 throw new Exception("Modelo inválido !");
             else
             {
-                var modelo = _modeloRepositorio.BuscarPorId(prmCaminhaoViewModel.ModeloId);
+                var modelo = _modeloRepositorio.BuscarPorIdAsNoTracking(prmCaminhaoViewModel.ModeloId);
 
                 if (modelo == null)
                     throw new Exception("Modelo não encontrado !");
@@ -140,7 +140,7 @@ namespace Volvo.Teste.Servico
             Modelo modelo = null;
 
             if (prmCaminhaoViewModel.ModeloId > 0)
-                modelo = _modeloRepositorio.Buscar(x => x.Id == prmCaminhaoViewModel.ModeloId);
+                modelo = _modeloRepositorio.BuscarPorIdAsNoTracking( prmCaminhaoViewModel.ModeloId);
             else if (!string.IsNullOrEmpty(prmCaminhaoViewModel.Modelo?.Descricao))
                 modelo = _modeloRepositorio.Buscar(x => x.Descricao == prmCaminhaoViewModel.Modelo.Descricao);
 
