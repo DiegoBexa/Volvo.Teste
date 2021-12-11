@@ -1,0 +1,15 @@
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\bin\Debug\netcoreapp3.1\Volvo.Teste.Servico.deps.json
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\bin\Debug\netcoreapp3.1\Volvo.Teste.Servico.dll
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\bin\Debug\netcoreapp3.1\Volvo.Teste.Servico.pdb
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\bin\Debug\netcoreapp3.1\Volvo.Teste.Dominio.dll
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\bin\Debug\netcoreapp3.1\Volvo.Teste.Repositorio.dll
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\bin\Debug\netcoreapp3.1\Volvo.Teste.Dominio.pdb
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\bin\Debug\netcoreapp3.1\Volvo.Teste.Repositorio.pdb
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\obj\Debug\netcoreapp3.1\Volvo.Teste.Servico.csproj.AssemblyReference.cache
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\obj\Debug\netcoreapp3.1\Volvo.Teste.Servico.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\obj\Debug\netcoreapp3.1\Volvo.Teste.Servico.AssemblyInfoInputs.cache
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\obj\Debug\netcoreapp3.1\Volvo.Teste.Servico.AssemblyInfo.cs
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\obj\Debug\netcoreapp3.1\Volvo.Teste.Servico.csproj.CoreCompileInputs.cache
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\obj\Debug\netcoreapp3.1\Volvo.Teste.Servico.csproj.CopyComplete
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\obj\Debug\netcoreapp3.1\Volvo.Teste.Servico.dll
+D:\Workspace\Volvo.Teste\Volvo.Teste.Servico\obj\Debug\netcoreapp3.1\Volvo.Teste.Servico.pdb

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Volvo.Teste.Repositorio\Volvo.Teste.Repositorio.csproj" />
+    <ProjectReference Include="..\Volvo.Teste.Servico\Volvo.Teste.Servico.csproj" />
+    <ProjectReference Include="..\Volvo.Teste.Swagger\Volvo.Teste.Swagger.csproj" />
+  </ItemGroup>
+
+
+</Project>

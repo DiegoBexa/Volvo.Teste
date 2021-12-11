@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Volvo.Teste.Dominio/1.0.0": {
+        "runtime": {
+          "Volvo.Teste.Dominio.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Volvo.Teste.Dominio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

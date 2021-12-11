@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplicação", "Aplicação", "{685BDE7F-2BE6-4E82-96F7-210A77A33EDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{BB646405-F836-4B1F-A317-C6FC566BBE4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{C72A3AEA-84BA-4210-9CE5-140ED495B9DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{1EFAA0D6-EEB1-43E6-9A6F-22EA1B79DC79}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volvo.Teste.Repositorio", "Volvo.Teste.Repositorio\Volvo.Teste.Repositorio.csproj", "{A3E66002-8B3E-4FC4-A4D1-BC5D0E725CD0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volvo.Teste.Dominio", "Volvo.Teste.Dominio\Volvo.Teste.Dominio.csproj", "{55EBC175-749B-429D-8050-2335298A68A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volvo.Teste.MVC", "Volvo.Teste.MVC\Volvo.Teste.MVC.csproj", "{887E7F4D-7CBD-4D59-9BDC-06BF9BA28F3C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volvo.Teste.Unitario", "Volvo.Teste.Unitario\Volvo.Teste.Unitario.csproj", "{2AC3EB62-6B80-40DE-81F8-340835E50DCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serviço", "Serviço", "{8B9E6C76-7A03-4D8D-9273-4F41BE4B4283}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volvo.Teste.Servico", "Volvo.Teste.Servico\Volvo.Teste.Servico.csproj", "{BA17A2C6-21A2-4FDF-A7AD-6EF1DC527C09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volvo.Teste.API", "Volvo.Teste.API\Volvo.Teste.API.csproj", "{2B31ABDB-35E5-4A85-974D-71A922FD710E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{B609BC2D-8D87-4051-8FF1-E0BFD23734B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volvo.Teste.Swagger", "Volvo.Teste.Swagger\Volvo.Teste.Swagger.csproj", "{39F86624-4C7D-4255-B615-324982D2AEFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3E66002-8B3E-4FC4-A4D1-BC5D0E725CD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E66002-8B3E-4FC4-A4D1-BC5D0E725CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E66002-8B3E-4FC4-A4D1-BC5D0E725CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E66002-8B3E-4FC4-A4D1-BC5D0E725CD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55EBC175-749B-429D-8050-2335298A68A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55EBC175-749B-429D-8050-2335298A68A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55EBC175-749B-429D-8050-2335298A68A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55EBC175-749B-429D-8050-2335298A68A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{887E7F4D-7CBD-4D59-9BDC-06BF9BA28F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887E7F4D-7CBD-4D59-9BDC-06BF9BA28F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{887E7F4D-7CBD-4D59-9BDC-06BF9BA28F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887E7F4D-7CBD-4D59-9BDC-06BF9BA28F3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AC3EB62-6B80-40DE-81F8-340835E50DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AC3EB62-6B80-40DE-81F8-340835E50DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AC3EB62-6B80-40DE-81F8-340835E50DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AC3EB62-6B80-40DE-81F8-340835E50DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA17A2C6-21A2-4FDF-A7AD-6EF1DC527C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA17A2C6-21A2-4FDF-A7AD-6EF1DC527C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA17A2C6-21A2-4FDF-A7AD-6EF1DC527C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA17A2C6-21A2-4FDF-A7AD-6EF1DC527C09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B31ABDB-35E5-4A85-974D-71A922FD710E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B31ABDB-35E5-4A85-974D-71A922FD710E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B31ABDB-35E5-4A85-974D-71A922FD710E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B31ABDB-35E5-4A85-974D-71A922FD710E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39F86624-4C7D-4255-B615-324982D2AEFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39F86624-4C7D-4255-B615-324982D2AEFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39F86624-4C7D-4255-B615-324982D2AEFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39F86624-4C7D-4255-B615-324982D2AEFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A3E66002-8B3E-4FC4-A4D1-BC5D0E725CD0} = {C72A3AEA-84BA-4210-9CE5-140ED495B9DD}
+		{55EBC175-749B-429D-8050-2335298A68A0} = {BB646405-F836-4B1F-A317-C6FC566BBE4E}
+		{887E7F4D-7CBD-4D59-9BDC-06BF9BA28F3C} = {685BDE7F-2BE6-4E82-96F7-210A77A33EDF}
+		{2AC3EB62-6B80-40DE-81F8-340835E50DCA} = {1EFAA0D6-EEB1-43E6-9A6F-22EA1B79DC79}
+		{BA17A2C6-21A2-4FDF-A7AD-6EF1DC527C09} = {8B9E6C76-7A03-4D8D-9273-4F41BE4B4283}
+		{2B31ABDB-35E5-4A85-974D-71A922FD710E} = {685BDE7F-2BE6-4E82-96F7-210A77A33EDF}
+		{B609BC2D-8D87-4051-8FF1-E0BFD23734B6} = {C72A3AEA-84BA-4210-9CE5-140ED495B9DD}
+		{39F86624-4C7D-4255-B615-324982D2AEFB} = {B609BC2D-8D87-4051-8FF1-E0BFD23734B6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD002F8E-5396-4D60-A455-EB1011FEA8D4}
+	EndGlobalSection
+EndGlobal

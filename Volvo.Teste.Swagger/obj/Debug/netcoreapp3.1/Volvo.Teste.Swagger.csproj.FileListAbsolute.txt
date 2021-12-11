@@ -1,0 +1,9 @@
+D:\Workspace\Volvo.Teste\Volvo.Teste.Swagger\bin\Debug\netcoreapp3.1\Volvo.Teste.Swagger.deps.json
+D:\Workspace\Volvo.Teste\Volvo.Teste.Swagger\bin\Debug\netcoreapp3.1\Volvo.Teste.Swagger.dll
+D:\Workspace\Volvo.Teste\Volvo.Teste.Swagger\bin\Debug\netcoreapp3.1\Volvo.Teste.Swagger.pdb
+D:\Workspace\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.AssemblyInfoInputs.cache
+D:\Workspace\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.AssemblyInfo.cs
+D:\Workspace\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.csproj.CoreCompileInputs.cache
+D:\Workspace\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.dll
+D:\Workspace\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.pdb
