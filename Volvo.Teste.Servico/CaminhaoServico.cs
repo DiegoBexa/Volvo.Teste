@@ -33,9 +33,9 @@ namespace Volvo.Teste.Servico
 
             Caminhao _caminhao = mapper.Map<Caminhao>(prmCaminhaoViewModel);
 
-            _caminhao = _caminhaoRepositorio.Adicionar(_caminhao);
+            var adicionadoCaminhao = _caminhaoRepositorio.Adicionar(_caminhao);
 
-            prmCaminhaoViewModel = mapper.Map<CaminhaoViewModel>(_caminhao);
+            prmCaminhaoViewModel = mapper.Map<CaminhaoViewModel>(adicionadoCaminhao);
 
             return prmCaminhaoViewModel;
         }
@@ -64,9 +64,8 @@ namespace Volvo.Teste.Servico
             if (_caminhao == null)
                 throw new Exception("Caminhão não encontrado");
 
-            _caminhaoRepositorio.Deletar(_caminhao);
+            return _caminhaoRepositorio.Deletar(_caminhao);
 
-            return true;
         }
 
         public bool Editar(CaminhaoViewModel prmCaminhaoViewModel)
@@ -85,9 +84,8 @@ namespace Volvo.Teste.Servico
 
             var objAtualizado = mapper.Map(prmCaminhaoViewModel, _caminhao);
 
-            _caminhaoRepositorio.Atualizar(objAtualizado);
+            return _caminhaoRepositorio.Atualizar(objAtualizado);
 
-            return true;
         }
 
         public IEnumerable<CaminhaoViewModel> ListarTodos()

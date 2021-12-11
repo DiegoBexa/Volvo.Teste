@@ -97,7 +97,7 @@ namespace Volvo.Teste.Unitario.Serviço
 
             Marca marca = new Marca { Id = 1, Descricao = "Outra Marca" };
 
-            _marcaRepositorio.BuscarPorId(caminhaoViewModel.MarcaId).Returns(marca);
+            _marcaRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.MarcaId).Returns(marca);
 
             var exception = Assert.Throws<Exception>(() => caminhaoServico.Adicionar(caminhaoViewModel));
             Assert.Equal("Modelo inválido !", exception.Message);
@@ -106,7 +106,7 @@ namespace Volvo.Teste.Unitario.Serviço
 
         #endregion
 
-        #region [ Validação Objeto Enviado]
+        #region [Validação Objeto Enviado]
 
         [Fact]
         public void Adicionar_EnviandoModeloNaoPermitido()
@@ -124,9 +124,9 @@ namespace Volvo.Teste.Unitario.Serviço
             Modelo modelo = new Modelo { Id = 1, Descricao = "Outros", MarcaId = 1, ModeloPermitido = false };
             Marca marca = new Marca { Id = 1, Descricao = "Outra Marca" };
 
-            
-            _modeloRepositorio.BuscarPorId(caminhaoViewModel.ModeloId).Returns(modelo);        
-            _marcaRepositorio.BuscarPorId(caminhaoViewModel.MarcaId).Returns(marca);
+
+            _modeloRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.ModeloId).Returns(modelo);
+            _marcaRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.MarcaId).Returns(marca);
 
             var exception = Assert.Throws<Exception>(() => caminhaoServico.Adicionar(caminhaoViewModel));
 
@@ -150,9 +150,9 @@ namespace Volvo.Teste.Unitario.Serviço
             Modelo modelo = new Modelo { Id = 1, Descricao = "Outros", MarcaId = 1, ModeloPermitido = false };
             Marca marca = new Marca { Id = 99, Descricao = "Outra Marca" };
 
-            _modeloRepositorio.BuscarPorId(caminhaoViewModel.ModeloId).Returns(modelo);
+            _modeloRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.ModeloId).Returns(modelo);
 
-            _marcaRepositorio.BuscarPorId(caminhaoViewModel.MarcaId).Returns(marca);
+            _marcaRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.MarcaId).Returns(marca);
 
             var exception = Assert.Throws<Exception>(() => caminhaoServico.Adicionar(caminhaoViewModel));
 
@@ -176,8 +176,8 @@ namespace Volvo.Teste.Unitario.Serviço
             Modelo modelo = new Modelo { Id = 1, Descricao = "Outros", MarcaId = 1, ModeloPermitido = false };
             Marca marca = new Marca { Id = 1, Descricao = "Outra Marca" };
 
-            _modeloRepositorio.BuscarPorId(caminhaoViewModel.ModeloId).Returns(modelo);
-            _marcaRepositorio.BuscarPorId(caminhaoViewModel.MarcaId).Returns(marca);
+            _modeloRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.ModeloId).Returns(modelo);
+            _marcaRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.MarcaId).Returns(marca);
 
             var exception = Assert.Throws<Exception>(() => caminhaoServico.Adicionar(caminhaoViewModel));
 
@@ -201,8 +201,8 @@ namespace Volvo.Teste.Unitario.Serviço
             Marca marca = new Marca { Id = 99, Descricao = "Outra Marca" };
 
 
-            _modeloRepositorio.BuscarPorId(caminhaoViewModel.ModeloId).Returns(modelo);
-            _marcaRepositorio.BuscarPorId(caminhaoViewModel.MarcaId).Returns(marca);
+            _modeloRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.ModeloId).Returns(modelo);
+            _marcaRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.MarcaId).Returns(marca);
 
             var exception = Assert.Throws<Exception>(() => caminhaoServico.Adicionar(caminhaoViewModel));
 
@@ -239,7 +239,7 @@ namespace Volvo.Teste.Unitario.Serviço
             caminhaos.Add(new Caminhao { Id = 2, Descricao = "Caminhão 2", MarcaId = 1, ModeloId = 1, AnoModelo = 2021, AnoFabricacao = 2022 });
 
 
-            _caminhaoRepositorio.BuscarPorId(1).Returns(caminhaos.FirstOrDefault(x => x.Id == 1));
+            _caminhaoRepositorio.BuscarPorIdAsNoTracking(1).Returns(caminhaos.FirstOrDefault(x => x.Id == 1));
 
             var result = caminhaoServico.BuscarPorId(1);
 
@@ -255,8 +255,8 @@ namespace Volvo.Teste.Unitario.Serviço
         public void Adicionar_EnviandoObjetoInvalido()
         {
             var exception = Assert.Throws<ValidationException>(() => caminhaoServico.Adicionar(
-                new CaminhaoViewModel { MarcaId = 1, ModeloId = 1,AnoFabricacao = 2021, AnoModelo = 2022 }));
-            
+                new CaminhaoViewModel { MarcaId = 1, ModeloId = 1, AnoFabricacao = 2021, AnoModelo = 2022 }));
+
             Assert.Equal("Campo Descrição Obrigatório!", exception.Message);
         }
 
@@ -264,7 +264,7 @@ namespace Volvo.Teste.Unitario.Serviço
         public void Adicionar_FabricacaoDiferenteAnoAtual()
         {
             var exception = Assert.Throws<ValidationException>(() => caminhaoServico.Adicionar(
-                new CaminhaoViewModel {Descricao = "Caminhão A", MarcaId = 1, ModeloId = 1, AnoFabricacao = 2022, AnoModelo = 2022 }));
+                new CaminhaoViewModel { Descricao = "Caminhão A", MarcaId = 1, ModeloId = 1, AnoFabricacao = 2022, AnoModelo = 2022 }));
 
             Assert.Equal("Ano inválido, ano tem que ser o atual!", exception.Message);
         }
@@ -283,7 +283,7 @@ namespace Volvo.Teste.Unitario.Serviço
         public void Editar_EnviandoObjetoInvalido()
         {
             var exception = Assert.Throws<ValidationException>(() => caminhaoServico.Editar(
-                new CaminhaoViewModel {Id = 1, MarcaId = 1, ModeloId = 1, AnoFabricacao = 2021, AnoModelo = 2022 }));
+                new CaminhaoViewModel { Id = 1, MarcaId = 1, ModeloId = 1, AnoFabricacao = 2021, AnoModelo = 2022 }));
 
             Assert.Equal("Campo Descrição Obrigatório!", exception.Message);
         }
@@ -306,6 +306,123 @@ namespace Volvo.Teste.Unitario.Serviço
             Assert.Equal("Ano inválido, ano tem que ser o atual ou subsequente!", exception.Message);
         }
 
+        #endregion
+
+        #region [Validação Adicionar Completo]
+
+        [Fact]
+        public void Adicionar_RetornoSucesso()
+        {
+            CaminhaoViewModel caminhaoViewModel = new CaminhaoViewModel
+            {
+                Id = 0,
+                Descricao = "Caminhão Novo Adicionado",
+                MarcaId = 1,
+                ModeloId = 1,
+                AnoFabricacao = 2021,
+                AnoModelo = 2021
+            };
+
+
+            Caminhao caminhaoRetornado = new Caminhao
+            {
+                Id = 99,
+                Descricao = "Caminhão Novo Adicionado",
+                MarcaId = 1,
+                ModeloId = 1,
+                AnoFabricacao = 2021,
+                AnoModelo = 2021
+            };
+
+            Modelo modelo = new Modelo { Id = 1, Descricao = "FH", MarcaId = 1, ModeloPermitido = true };
+            Marca marca = new Marca { Id = 1, Descricao = "Volvo" };
+
+
+            _modeloRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.ModeloId).Returns(modelo);
+            _marcaRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.MarcaId).Returns(marca);
+
+            Caminhao _caminhao = _mapper.Map<Caminhao>(caminhaoViewModel);
+
+            _caminhaoRepositorio.Adicionar(_caminhao).ReturnsForAnyArgs(x => caminhaoRetornado);
+
+            var adicionado = caminhaoServico.Adicionar(caminhaoViewModel);
+
+            Assert.Equal(adicionado.Id, caminhaoRetornado.Id);
+
+        }
+        #endregion
+
+        #region [Validação Editar Completo]
+
+        [Fact]
+        public void Editar_RetornoSucesso()
+        {
+            CaminhaoViewModel caminhaoViewModel = new CaminhaoViewModel
+            {
+                Id = 99,
+                Descricao = "Caminhão Editado",
+                MarcaId = 1,
+                ModeloId = 1,
+                AnoFabricacao = 2021,
+                AnoModelo = 2021
+            };
+
+            Caminhao caminhaoEncontrado = new Caminhao
+            {
+                Id = 99,
+                Descricao = "Caminhão Editado",
+                MarcaId = 1,
+                ModeloId = 1,
+                AnoFabricacao = 2021,
+                AnoModelo = 2021
+            };
+
+
+            Modelo modelo = new Modelo { Id = 1, Descricao = "FH", MarcaId = 1, ModeloPermitido = true };
+            Marca marca = new Marca { Id = 1, Descricao = "Volvo" };
+
+
+            _modeloRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.ModeloId).Returns(modelo);
+            _marcaRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.MarcaId).Returns(marca);
+
+            _caminhaoRepositorio.BuscarPorId(caminhaoViewModel.Id).Returns(caminhaoEncontrado);
+
+             _caminhaoRepositorio.Atualizar(caminhaoEncontrado).Returns(true);
+
+            var retorno = caminhaoServico.Editar(caminhaoViewModel);
+
+            Assert.True(retorno);
+
+        }
+        #endregion
+
+        #region [Validação Deletar Completo]
+
+        [Fact]
+        public void Deletar_RetornoSucesso()
+        {
+            
+
+            Caminhao caminhaoEncontrado = new Caminhao
+            {
+                Id = 99,
+                Descricao = "Caminhão Editado",
+                MarcaId = 1,
+                ModeloId = 1,
+                AnoFabricacao = 2021,
+                AnoModelo = 2021
+            };
+
+
+            _caminhaoRepositorio.BuscarPorId(99).Returns(caminhaoEncontrado);
+
+            _caminhaoRepositorio.Deletar(caminhaoEncontrado).Returns(true);
+
+            var retorno = caminhaoServico.Deletar(99);
+
+            Assert.True(retorno);
+
+        }
         #endregion
     }
 }

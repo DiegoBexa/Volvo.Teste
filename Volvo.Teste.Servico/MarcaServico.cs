@@ -56,9 +56,7 @@ namespace Volvo.Teste.Servico
             if (_marca == null)
                 throw new Exception("Marca não encontrada");
 
-            _marcaRepositorio.Deletar(_marca);
-
-            return true;
+            return _marcaRepositorio.Deletar(_marca);
         }
 
         public bool Editar(MarcaViewModel prmMarcaViewModel)
@@ -73,9 +71,8 @@ namespace Volvo.Teste.Servico
 
             var objAtualizado = mapper.Map(prmMarcaViewModel, _marca);
 
-            _marcaRepositorio.Atualizar(objAtualizado);
+            return _marcaRepositorio.Atualizar(objAtualizado);
 
-            return true;
         }
 
         public IEnumerable<MarcaViewModel> ListarTodos()

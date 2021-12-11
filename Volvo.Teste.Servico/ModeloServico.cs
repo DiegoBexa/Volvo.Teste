@@ -60,9 +60,7 @@ namespace Volvo.Teste.Servico
             if (_modelo == null)
                 throw new Exception("Modelo não encontrado");
 
-            _modeloRepositorio.Deletar(_modelo);
-
-            return true;
+            return _modeloRepositorio.Deletar(_modelo);
         }
 
         public bool Editar(ModeloViewModel prmModeloViewModel)
@@ -77,9 +75,8 @@ namespace Volvo.Teste.Servico
 
             var objAtualizado = mapper.Map(prmModeloViewModel, _modelo);
 
-            _modeloRepositorio.Atualizar(objAtualizado);
+            return _modeloRepositorio.Atualizar(objAtualizado);
 
-            return true;
         }
 
         public IEnumerable<ModeloViewModel> ListarTodos()

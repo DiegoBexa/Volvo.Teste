@@ -24,10 +24,10 @@ namespace Volvo.Teste.Repositorio
             return entidade;
         }
 
-        public void Atualizar(T entidade)
+        public bool Atualizar(T entidade)
         {
             _objContexto.Set<T>().Update(entidade);
-            _objContexto.SaveChanges();
+            return _objContexto.SaveChanges() > 0;
         }
 
         public T Buscar(Expression<Func<T, bool>> predicato)
@@ -35,11 +35,13 @@ namespace Volvo.Teste.Repositorio
             return _objContexto.Set<T>().FirstOrDefault(predicato);
         }
 
-        public void Deletar(T entidade)
+        public bool Deletar(T entidade)
         {
             _objContexto.Set<T>().Remove(entidade);
-            _objContexto.SaveChanges();
+            int linhasAfetadas = _objContexto.SaveChanges();
             _objContexto.Entry(entidade).Reload();
+
+            return linhasAfetadas > 0;
         }
 
 
