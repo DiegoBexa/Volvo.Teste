@@ -41,7 +41,7 @@ namespace Volvo.Teste.Servico
             if (prmId == 0)
                 throw new Exception("Id não pode ser igual a 0");
 
-            Modelo _modelo = _modeloRepositorio.Buscar(x => x.Id == prmId);
+            Modelo _modelo = _modeloRepositorio.BuscarPorId(prmId);
 
             if (_modelo == null)
                 throw new Exception("Modelo não encontrado");
@@ -55,7 +55,7 @@ namespace Volvo.Teste.Servico
             if (prmId == 0)
                 throw new Exception("Id não pode ser igual a 0");
 
-            Modelo _modelo = _modeloRepositorio.Buscar(x => x.Id == prmId);
+            Modelo _modelo = _modeloRepositorio.BuscarPorId(prmId);
 
             if (_modelo == null)
                 throw new Exception("Modelo não encontrado");
@@ -70,7 +70,7 @@ namespace Volvo.Teste.Servico
             if (prmModeloViewModel.Id == 0)
                 throw new Exception("Id não pode ser igual a 0");
 
-            Modelo _modelo = _modeloRepositorio.Buscar(x => x.Id == prmModeloViewModel.Id);
+            Modelo _modelo = _modeloRepositorio.BuscarPorId(prmModeloViewModel.Id);
 
             if (_modelo == null)
                 throw new Exception("Modelo não encontrado");
