@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nXs0xvoa9Lrjb9KJaf7qJi2ixKtaTAwOmVC0TZUy9JwDQq9Z2XAOio2rRK9xLPva5aRKf8HKmKEwynKejynrKw==",
+  "dgSpecHash": "zoeSYmVFWaDLZngaCm7l3JVdlwkZtPwInAAn2mas89RGNfN2Mc9My+pX4HBc4HmUCfihU+fi/QKKL2Pvprknbw==",
   "success": true,
-  "projectFilePath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.API\\Volvo.Teste.API.csproj",
+  "projectFilePath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.API\\Volvo.Teste.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\diego\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\diego\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

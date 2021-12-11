@@ -154,11 +154,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Swagger\\Volvo.Teste.Swagger.csproj",
+      "projectUniqueName": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Swagger\\Volvo.Teste.Swagger.csproj",
       "projectName": "Volvo.Teste.Swagger",
-      "projectPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Swagger\\Volvo.Teste.Swagger.csproj",
+      "projectPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Swagger\\Volvo.Teste.Swagger.csproj",
       "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-      "outputPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Swagger\\obj\\",
+      "outputPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Swagger\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

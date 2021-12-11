@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj": {}
+    "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj": {}
   },
   "projects": {
-    "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj": {
+    "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj",
+        "projectUniqueName": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj",
         "projectName": "Volvo.Teste.Dominio",
-        "projectPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj",
+        "projectPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj",
         "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-        "outputPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Dominio\\obj\\",
+        "outputPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

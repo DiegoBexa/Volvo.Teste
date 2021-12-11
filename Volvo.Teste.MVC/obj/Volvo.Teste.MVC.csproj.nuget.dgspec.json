@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.MVC\\Volvo.Teste.MVC.csproj": {}
+    "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.MVC\\Volvo.Teste.MVC.csproj": {}
   },
   "projects": {
-    "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj": {
+    "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj",
+        "projectUniqueName": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj",
         "projectName": "Volvo.Teste.Dominio",
-        "projectPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj",
+        "projectPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj",
         "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-        "outputPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Dominio\\obj\\",
+        "outputPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -61,14 +61,14 @@
         }
       }
     },
-    "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.MVC\\Volvo.Teste.MVC.csproj": {
+    "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.MVC\\Volvo.Teste.MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.MVC\\Volvo.Teste.MVC.csproj",
+        "projectUniqueName": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.MVC\\Volvo.Teste.MVC.csproj",
         "projectName": "Volvo.Teste.MVC",
-        "projectPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.MVC\\Volvo.Teste.MVC.csproj",
+        "projectPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.MVC\\Volvo.Teste.MVC.csproj",
         "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-        "outputPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.MVC\\obj\\",
+        "outputPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.MVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -88,11 +88,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj": {
-                "projectPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj"
+              "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj": {
+                "projectPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj"
               },
-              "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj": {
-                "projectPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj"
+              "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj": {
+                "projectPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj"
               }
             }
           }
@@ -154,14 +154,14 @@
         }
       }
     },
-    "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj": {
+    "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj",
+        "projectUniqueName": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj",
         "projectName": "Volvo.Teste.Repositorio",
-        "projectPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj",
+        "projectPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj",
         "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-        "outputPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Repositorio\\obj\\",
+        "outputPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Repositorio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -181,8 +181,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj": {
-                "projectPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj"
+              "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj": {
+                "projectPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj"
               }
             }
           }
@@ -235,14 +235,14 @@
         }
       }
     },
-    "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj": {
+    "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj",
+        "projectUniqueName": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj",
         "projectName": "Volvo.Teste.Servico",
-        "projectPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj",
+        "projectPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj",
         "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-        "outputPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Servico\\obj\\",
+        "outputPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Servico\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -262,11 +262,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj": {
-                "projectPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj"
+              "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj": {
+                "projectPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Dominio\\Volvo.Teste.Dominio.csproj"
               },
-              "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj": {
-                "projectPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj"
+              "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj": {
+                "projectPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj"
               }
             }
           }

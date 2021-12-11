@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Moq;
+using NSubstitute;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +8,6 @@ using Volvo.Teste.Dominio;
 using Volvo.Teste.Repositorio.Interface;
 using Volvo.Teste.Servico;
 using Volvo.Teste.Servico.AutoMapper;
-using Volvo.Teste.Servico.Interface;
 using Volvo.Teste.Servico.ViewModel;
 using Xunit;
 
@@ -16,14 +15,29 @@ namespace Volvo.Teste.Unitario.Serviço
 {
     public class CaminhaoServicoTests
     {
-        private CaminhaoServico caminhaoServico;
+        private readonly ICaminhaoRepositorio _caminhaoRepositorio;
+        private readonly IModeloRepositorio _modeloRepositorio;
+        private readonly IMarcaRepositorio _marcaRepositorio;
+        private readonly IMapper _mapper;
+
+
+        private readonly CaminhaoServico caminhaoServico;
 
         public CaminhaoServicoTests()
         {
-            caminhaoServico = new CaminhaoServico(new Mock<ICaminhaoRepositorio>().Object,
-                                                  new Mock<IMapper>().Object,
-                                                  new Mock<IModeloRepositorio>().Object,
-                                                  new Mock<IMarcaRepositorio>().Object);
+            var _autoMapperProfile = new AutoMapperSetup();
+            var _configuration = new MapperConfiguration(x => x.AddProfile(_autoMapperProfile));
+            IMapper mapper = new Mapper(_configuration);
+
+            _caminhaoRepositorio = Substitute.For<ICaminhaoRepositorio>();
+            _mapper = mapper;
+            _modeloRepositorio = Substitute.For<IModeloRepositorio>();
+            _marcaRepositorio = Substitute.For<IMarcaRepositorio>();
+
+            caminhaoServico = new CaminhaoServico(_caminhaoRepositorio,
+                                                   _mapper,
+                                                  _modeloRepositorio,
+                                                  _marcaRepositorio);
         }
 
         #region Validação Enviando ID
@@ -83,18 +97,7 @@ namespace Volvo.Teste.Unitario.Serviço
 
             Marca marca = new Marca { Id = 1, Descricao = "Outra Marca" };
 
-            var _marcaRepositorio = new Mock<IMarcaRepositorio>();
-            _marcaRepositorio.Setup(x => x.Buscar(x => x.Id == caminhaoViewModel.MarcaId)).Returns(marca);
-
-
-            var _autoMapperProfile = new AutoMapperSetup();
-            var _configuration = new MapperConfiguration(x => x.AddProfile(_autoMapperProfile));
-            IMapper _mapper = new Mapper(_configuration);
-
-            var _modeloRepositorio = new Mock<IModeloRepositorio>();
-
-            var _caminhaoRepositorio = new Mock<ICaminhaoRepositorio>();
-            caminhaoServico = new CaminhaoServico(_caminhaoRepositorio.Object, _mapper, _modeloRepositorio.Object, _marcaRepositorio.Object);
+            _marcaRepositorio.BuscarPorId(caminhaoViewModel.MarcaId).Returns(marca);
 
             var exception = Assert.Throws<Exception>(() => caminhaoServico.Adicionar(caminhaoViewModel));
             Assert.Equal("Modelo inválido !", exception.Message);
@@ -121,18 +124,9 @@ namespace Volvo.Teste.Unitario.Serviço
             Modelo modelo = new Modelo { Id = 1, Descricao = "Outros", MarcaId = 1, ModeloPermitido = false };
             Marca marca = new Marca { Id = 1, Descricao = "Outra Marca" };
 
-            var _modeloRepositorio = new Mock<IModeloRepositorio>();
-            _modeloRepositorio.Setup(x => x.Buscar(x => x.Id == caminhaoViewModel.ModeloId)).Returns(modelo);
-
-            var _marcaRepositorio = new Mock<IMarcaRepositorio>();
-            _marcaRepositorio.Setup(x => x.Buscar(x => x.Id == caminhaoViewModel.MarcaId)).Returns(marca);
-
-            var _autoMapperProfile = new AutoMapperSetup();
-            var _configuration = new MapperConfiguration(x => x.AddProfile(_autoMapperProfile));
-            IMapper _mapper = new Mapper(_configuration);
-
-            var _caminhaoRepositorio = new Mock<ICaminhaoRepositorio>();
-            caminhaoServico = new CaminhaoServico(_caminhaoRepositorio.Object, _mapper, _modeloRepositorio.Object, _marcaRepositorio.Object);
+            
+            _modeloRepositorio.BuscarPorId(caminhaoViewModel.ModeloId).Returns(modelo);        
+            _marcaRepositorio.BuscarPorId(caminhaoViewModel.MarcaId).Returns(marca);
 
             var exception = Assert.Throws<Exception>(() => caminhaoServico.Adicionar(caminhaoViewModel));
 
@@ -156,18 +150,9 @@ namespace Volvo.Teste.Unitario.Serviço
             Modelo modelo = new Modelo { Id = 1, Descricao = "Outros", MarcaId = 1, ModeloPermitido = false };
             Marca marca = new Marca { Id = 99, Descricao = "Outra Marca" };
 
-            var _modeloRepositorio = new Mock<IModeloRepositorio>();
-            _modeloRepositorio.Setup(x => x.Buscar(x => x.Id == caminhaoViewModel.ModeloId)).Returns(modelo);
+            _modeloRepositorio.BuscarPorId(caminhaoViewModel.ModeloId).Returns(modelo);
 
-            var _marcaRepositorio = new Mock<IMarcaRepositorio>();
-            _marcaRepositorio.Setup(x => x.Buscar(x => x.Id == caminhaoViewModel.MarcaId)).Returns(marca);
-
-            var _autoMapperProfile = new AutoMapperSetup();
-            var _configuration = new MapperConfiguration(x => x.AddProfile(_autoMapperProfile));
-            IMapper _mapper = new Mapper(_configuration);
-
-            var _caminhaoRepositorio = new Mock<ICaminhaoRepositorio>();
-            caminhaoServico = new CaminhaoServico(_caminhaoRepositorio.Object, _mapper, _modeloRepositorio.Object, _marcaRepositorio.Object);
+            _marcaRepositorio.BuscarPorId(caminhaoViewModel.MarcaId).Returns(marca);
 
             var exception = Assert.Throws<Exception>(() => caminhaoServico.Adicionar(caminhaoViewModel));
 
@@ -191,23 +176,12 @@ namespace Volvo.Teste.Unitario.Serviço
             Modelo modelo = new Modelo { Id = 1, Descricao = "Outros", MarcaId = 1, ModeloPermitido = false };
             Marca marca = new Marca { Id = 1, Descricao = "Outra Marca" };
 
-            var _modeloRepositorio = new Mock<IModeloRepositorio>();
-            _modeloRepositorio.Setup(x => x.Buscar(x => x.Id == caminhaoViewModel.ModeloId)).Returns(modelo);
-
-            var _marcaRepositorio = new Mock<IMarcaRepositorio>();
-            _marcaRepositorio.Setup(x => x.Buscar(x => x.Id == caminhaoViewModel.MarcaId)).Returns(marca);
-
-            var _autoMapperProfile = new AutoMapperSetup();
-            var _configuration = new MapperConfiguration(x => x.AddProfile(_autoMapperProfile));
-            IMapper _mapper = new Mapper(_configuration);
-
-            var _caminhaoRepositorio = new Mock<ICaminhaoRepositorio>();
-            caminhaoServico = new CaminhaoServico(_caminhaoRepositorio.Object, _mapper, _modeloRepositorio.Object, _marcaRepositorio.Object);
+            _modeloRepositorio.BuscarPorId(caminhaoViewModel.ModeloId).Returns(modelo);
+            _marcaRepositorio.BuscarPorId(caminhaoViewModel.MarcaId).Returns(marca);
 
             var exception = Assert.Throws<Exception>(() => caminhaoServico.Adicionar(caminhaoViewModel));
 
             Assert.Equal("Modelo não permitido!", exception.Message);
-
         }
 
         [Fact]
@@ -226,18 +200,9 @@ namespace Volvo.Teste.Unitario.Serviço
             Modelo modelo = new Modelo { Id = 1, Descricao = "Outros", MarcaId = 1, ModeloPermitido = false };
             Marca marca = new Marca { Id = 99, Descricao = "Outra Marca" };
 
-            var _modeloRepositorio = new Mock<IModeloRepositorio>();
-            _modeloRepositorio.Setup(x => x.Buscar(x => x.Id == caminhaoViewModel.ModeloId)).Returns(modelo);
 
-            var _marcaRepositorio = new Mock<IMarcaRepositorio>();
-            _marcaRepositorio.Setup(x => x.Buscar(x => x.Id == caminhaoViewModel.MarcaId)).Returns(marca);
-
-            var _autoMapperProfile = new AutoMapperSetup();
-            var _configuration = new MapperConfiguration(x => x.AddProfile(_autoMapperProfile));
-            IMapper _mapper = new Mapper(_configuration);
-
-            var _caminhaoRepositorio = new Mock<ICaminhaoRepositorio>();
-            caminhaoServico = new CaminhaoServico(_caminhaoRepositorio.Object, _mapper, _modeloRepositorio.Object, _marcaRepositorio.Object);
+            _modeloRepositorio.BuscarPorId(caminhaoViewModel.ModeloId).Returns(modelo);
+            _marcaRepositorio.BuscarPorId(caminhaoViewModel.MarcaId).Returns(marca);
 
             var exception = Assert.Throws<Exception>(() => caminhaoServico.Adicionar(caminhaoViewModel));
 
@@ -257,24 +222,13 @@ namespace Volvo.Teste.Unitario.Serviço
             caminhaos.Add(new Caminhao { Id = 1, Descricao = "Caminhão 1", MarcaId = 1, ModeloId = 1, AnoModelo = 2021, AnoFabricacao = 2022 });
             caminhaos.Add(new Caminhao { Id = 2, Descricao = "Caminhão 2", MarcaId = 1, ModeloId = 1, AnoModelo = 2021, AnoFabricacao = 2022 });
 
-            var _modeloRepositorio = new Mock<IModeloRepositorio>();
 
-
-            var _autoMapperProfile = new AutoMapperSetup();
-            var _configuration = new MapperConfiguration(x => x.AddProfile(_autoMapperProfile));
-            IMapper _mapper = new Mapper(_configuration);
-
-            var _marcaRepositorio = new Mock<IMarcaRepositorio>();
-
-            var _caminhaoRepositorio = new Mock<ICaminhaoRepositorio>();
-            caminhaoServico = new CaminhaoServico(_caminhaoRepositorio.Object, _mapper, _modeloRepositorio.Object, _marcaRepositorio.Object);
-            _caminhaoRepositorio.Setup(x => x.ListarTodos()).Returns(caminhaos);
+            _caminhaoRepositorio.ListarTodos().Returns(caminhaos);
 
             var result = caminhaoServico.ListarTodos();
 
             //Validando se o retorno contém uma lista com objetos.
             Assert.True(result.Count() > 0);
-
         }
 
         [Fact]
@@ -284,24 +238,13 @@ namespace Volvo.Teste.Unitario.Serviço
             caminhaos.Add(new Caminhao { Id = 1, Descricao = "Caminhão 1", MarcaId = 1, ModeloId = 1, AnoModelo = 2021, AnoFabricacao = 2022 });
             caminhaos.Add(new Caminhao { Id = 2, Descricao = "Caminhão 2", MarcaId = 1, ModeloId = 1, AnoModelo = 2021, AnoFabricacao = 2022 });
 
-            var _modeloRepositorio = new Mock<IModeloRepositorio>();
 
-
-            var _autoMapperProfile = new AutoMapperSetup();
-            var _configuration = new MapperConfiguration(x => x.AddProfile(_autoMapperProfile));
-            IMapper _mapper = new Mapper(_configuration);
-
-            var _marcaRepositorio = new Mock<IMarcaRepositorio>();
-
-            var _caminhaoRepositorio = new Mock<ICaminhaoRepositorio>();
-            caminhaoServico = new CaminhaoServico(_caminhaoRepositorio.Object, _mapper, _modeloRepositorio.Object, _marcaRepositorio.Object);
-            _caminhaoRepositorio.Setup(x => x.BuscarPorId(1)).Returns(caminhaos.FirstOrDefault(x => x.Id == 1));
+            _caminhaoRepositorio.BuscarPorId(1).Returns(caminhaos.FirstOrDefault(x => x.Id == 1));
 
             var result = caminhaoServico.BuscarPorId(1);
 
             //Validando se o retorno contém uma lista com objetos.
-            Assert.Equal(1, result.Id);
-
+            Assert.Equal("Caminhão 1", result.Descricao);
         }
 
         #endregion

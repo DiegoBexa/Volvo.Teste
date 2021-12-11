@@ -7,5 +7,6 @@ namespace Volvo.Teste.Repositorio.Interface
     {
         IEnumerable<Modelo> ListarTodosPermitidos(int prmMarcaId);
         IEnumerable<Modelo> ListarTodos();
+        Modelo BuscarPorId(int prmId);
     }
 }

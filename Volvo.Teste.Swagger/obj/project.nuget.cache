@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jQThOaXVPrHqm46PmEfPlwN3nDmkx+gYZiYoJ3xk3aNplAHKoaAgVd98FxJlyE08KFMXo+kmmAxpTUjmZ2sVCA==",
+  "dgSpecHash": "odcV+r3EbUMJJffxY7GBGIo5KykCsltic7BQZXAvHxxpejsYYwPI6mZYkrGExb4JWUUNPq8mk/i5PBW6GqBe6w==",
   "success": true,
-  "projectFilePath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Swagger\\Volvo.Teste.Swagger.csproj",
+  "projectFilePath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Swagger\\Volvo.Teste.Swagger.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\diego\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\diego\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",

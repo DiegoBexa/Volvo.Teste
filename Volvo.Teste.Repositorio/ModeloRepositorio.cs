@@ -19,6 +19,11 @@ namespace Volvo.Teste.Repositorio
             return _objContexto.Modelo.Include(x => x.Marca);
         }
 
+        public Modelo BuscarPorId(int prmId)
+        {
+            return _objContexto.Modelo.FirstOrDefault(x => x.Id == prmId);
+        }
+
         public IEnumerable<Modelo> ListarTodosPermitidos(int prmMarcaId)
         {
             return _objContexto.Modelo.Where(x => x.MarcaId == prmMarcaId && x.ModeloPermitido);

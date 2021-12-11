@@ -709,6 +709,22 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
+      "NSubstitute/4.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Castle.Core": "4.4.0",
+          "System.Threading.Tasks.Extensions": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/NSubstitute.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NSubstitute.dll": {}
+        }
+      },
+      "NSubstitute.Analyzers.CSharp/1.0.15": {
+        "type": "package"
+      },
       "NuGet.Frameworks/5.0.0": {
         "type": "package",
         "compile": {
@@ -3439,6 +3455,42 @@
         "newtonsoft.json.9.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "NSubstitute/4.2.2": {
+      "sha512": "s+H1fUo+WSymYxNdZlwhekdNDLv4w0ZvmwYheMEe4tWACcMDNoqfcDpeL66RyWfurNvvIYQJNP3VUwX2aAC1gw==",
+      "type": "package",
+      "path": "nsubstitute/4.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/NSubstitute.dll",
+        "lib/net45/NSubstitute.xml",
+        "lib/net46/NSubstitute.dll",
+        "lib/net46/NSubstitute.xml",
+        "lib/netstandard1.3/NSubstitute.dll",
+        "lib/netstandard1.3/NSubstitute.xml",
+        "lib/netstandard2.0/NSubstitute.dll",
+        "lib/netstandard2.0/NSubstitute.xml",
+        "nsubstitute.4.2.2.nupkg.sha512",
+        "nsubstitute.nuspec"
+      ]
+    },
+    "NSubstitute.Analyzers.CSharp/1.0.15": {
+      "sha512": "z3x/YxqxYNx+epVAQ22brgn8aijD93dQjL/xczf2NSY77qQaqFSGFtzrKwq1r+5RPq+JdQ8BtDLDYUfjtxafHw==",
+      "type": "package",
+      "path": "nsubstitute.analyzers.csharp/1.0.15",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "analyzers/dotnet/cs/NSubstitute.Analyzers.CSharp.dll",
+        "analyzers/dotnet/cs/NSubstitute.Analyzers.Shared.dll",
+        "nsubstitute.analyzers.csharp.1.0.15.nupkg.sha512",
+        "nsubstitute.analyzers.csharp.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
       ]
     },
     "NuGet.Frameworks/5.0.0": {
@@ -7578,6 +7630,8 @@
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.NET.Test.Sdk >= 17.0.0",
       "Moq >= 4.16.1",
+      "NSubstitute >= 4.2.2",
+      "NSubstitute.Analyzers.CSharp >= 1.0.15",
       "Volvo.Teste.Servico >= 1.0.0",
       "xunit >= 2.4.1",
       "xunit.abstractions >= 2.0.3",
@@ -7592,11 +7646,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Unitario\\Volvo.Teste.Unitario.csproj",
+      "projectUniqueName": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Unitario\\Volvo.Teste.Unitario.csproj",
       "projectName": "Volvo.Teste.Unitario",
-      "projectPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Unitario\\Volvo.Teste.Unitario.csproj",
+      "projectPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Unitario\\Volvo.Teste.Unitario.csproj",
       "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-      "outputPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Unitario\\obj\\",
+      "outputPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Unitario\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7616,8 +7670,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj": {
-              "projectPath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj"
+            "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj": {
+              "projectPath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Servico\\Volvo.Teste.Servico.csproj"
             }
           }
         }
@@ -7639,6 +7693,16 @@
           "Moq": {
             "target": "Package",
             "version": "[4.16.1, )"
+          },
+          "NSubstitute": {
+            "target": "Package",
+            "version": "[4.2.2, )"
+          },
+          "NSubstitute.Analyzers.CSharp": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[1.0.15, )"
           },
           "xunit": {
             "target": "Package",

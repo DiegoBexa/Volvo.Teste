@@ -7,3 +7,13 @@ D:\Workspace\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste
 D:\Workspace\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.csproj.CoreCompileInputs.cache
 D:\Workspace\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.dll
 D:\Workspace\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.pdb
+D:\WorksGit\Volvo.Teste\Volvo.Teste.Swagger\bin\Debug\netcoreapp3.1\Volvo.Teste.Swagger.deps.json
+D:\WorksGit\Volvo.Teste\Volvo.Teste.Swagger\bin\Debug\netcoreapp3.1\Volvo.Teste.Swagger.dll
+D:\WorksGit\Volvo.Teste\Volvo.Teste.Swagger\bin\Debug\netcoreapp3.1\Volvo.Teste.Swagger.pdb
+D:\WorksGit\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.csproj.AssemblyReference.cache
+D:\WorksGit\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorksGit\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.AssemblyInfoInputs.cache
+D:\WorksGit\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.AssemblyInfo.cs
+D:\WorksGit\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.csproj.CoreCompileInputs.cache
+D:\WorksGit\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.dll
+D:\WorksGit\Volvo.Teste\Volvo.Teste.Swagger\obj\Debug\netcoreapp3.1\Volvo.Teste.Swagger.pdb

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XOQRV2wV+8W7AaD4C69DD52FVW5F2uKyehTOl8nMpZq7uYbl54UhiCP9sHLgaypszAofWDrmcxiLUMHZzMVkLA==",
+  "dgSpecHash": "a1gfeW2SGpuWLZRbxiKOJoPQjqxyXz0pgLJbQaTb2On10KpSORiCq/TpC64j7beWTVUn6MwuDL5cs7zMgXcPqw==",
   "success": true,
-  "projectFilePath": "D:\\Workspace\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj",
+  "projectFilePath": "D:\\WorksGit\\Volvo.Teste\\Volvo.Teste.Repositorio\\Volvo.Teste.Repositorio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\diego\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\diego\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

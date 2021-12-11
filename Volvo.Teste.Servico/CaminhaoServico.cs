@@ -109,7 +109,7 @@ namespace Volvo.Teste.Servico
                 throw new Exception("Marca inválida !");
             else
             {
-                var marca = _marcaRepositorio.Buscar(x => x.Id == prmCaminhaoViewModel.MarcaId);
+                var marca = _marcaRepositorio.BuscarPorId(prmCaminhaoViewModel.MarcaId);
 
                 if (marca == null)
                     throw new Exception("Marca não encontrada !");
@@ -119,7 +119,7 @@ namespace Volvo.Teste.Servico
                 throw new Exception("Modelo inválido !");
             else
             {
-                var modelo = _modeloRepositorio.Buscar(x => x.Id == prmCaminhaoViewModel.ModeloId);
+                var modelo = _modeloRepositorio.BuscarPorId(prmCaminhaoViewModel.ModeloId);
 
                 if (modelo == null)
                     throw new Exception("Modelo não encontrado !");
