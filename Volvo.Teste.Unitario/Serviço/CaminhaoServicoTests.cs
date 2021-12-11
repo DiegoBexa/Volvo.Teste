@@ -40,7 +40,9 @@ namespace Volvo.Teste.Unitario.Serviço
                                                   _marcaRepositorio);
         }
 
-        #region Validação Enviando ID
+
+
+        #region Validação Enviando ID Inválido
 
 
         [Fact]
@@ -105,6 +107,8 @@ namespace Volvo.Teste.Unitario.Serviço
 
 
         #endregion
+
+
 
         #region [Validação Objeto Enviado]
 
@@ -212,6 +216,8 @@ namespace Volvo.Teste.Unitario.Serviço
 
         #endregion
 
+
+
         #region[Validação de Busca]
 
 
@@ -248,6 +254,8 @@ namespace Volvo.Teste.Unitario.Serviço
         }
 
         #endregion
+
+
 
         #region [Validação Data Annotations]
 
@@ -308,6 +316,177 @@ namespace Volvo.Teste.Unitario.Serviço
 
         #endregion
 
+
+
+        #region [Validação Objetos não encontrados]
+
+        [Fact]
+        public void BuscarPorId_CaminhaoNaoEncontrado()
+        {
+            List<Caminhao> caminhaos = new List<Caminhao>();
+            caminhaos.Add(new Caminhao { Id = 1, Descricao = "Caminhão 1", MarcaId = 1, ModeloId = 1, AnoModelo = 2021, AnoFabricacao = 2022 });
+            caminhaos.Add(new Caminhao { Id = 2, Descricao = "Caminhão 2", MarcaId = 1, ModeloId = 1, AnoModelo = 2021, AnoFabricacao = 2022 });
+
+            _caminhaoRepositorio.BuscarPorIdAsNoTracking(4).Returns(caminhaos.FirstOrDefault(x => x.Id == 4));
+
+            var exception = Assert.Throws<Exception>(() => caminhaoServico.BuscarPorId(4));
+            Assert.Equal("Caminhão não encontrado", exception.Message);
+        }
+
+
+        [Fact]
+        public void Editar_CaminhaoNaoEncontrado()
+        {
+
+            CaminhaoViewModel caminhaoViewModel = new CaminhaoViewModel
+            {
+                Id = 99,
+                Descricao = "Caminhão Editado",
+                MarcaId = 1,
+                ModeloId = 1,
+                AnoFabricacao = 2021,
+                AnoModelo = 2021
+            };
+
+            Caminhao caminhaoNaoEncontrado = null;
+
+
+            Modelo modelo = new Modelo { Id = 1, Descricao = "FH", MarcaId = 1, ModeloPermitido = true };
+            Marca marca = new Marca { Id = 1, Descricao = "Volvo" };
+
+
+            _modeloRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.ModeloId).Returns(modelo);
+            _marcaRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.MarcaId).Returns(marca);
+
+            _caminhaoRepositorio.BuscarPorId(caminhaoViewModel.Id).Returns(caminhaoNaoEncontrado);
+
+            var exception = Assert.Throws<Exception>(() => caminhaoServico.Editar(caminhaoViewModel));
+            Assert.Equal("Caminhão não encontrado", exception.Message);
+        }
+
+        [Fact]
+        public void Deletar_CaminhaoNaoEncontrado()
+        {
+
+
+            Caminhao caminhaoNaoEncontrado = null;
+
+            _caminhaoRepositorio.BuscarPorId(99).Returns(caminhaoNaoEncontrado);
+
+
+            var exception = Assert.Throws<Exception>(() => caminhaoServico.Deletar(99));
+            Assert.Equal("Caminhão não encontrado", exception.Message);
+
+        }
+
+        [Fact]
+        public void Adicionar_MarcaNaoEncontrada()
+        {
+            CaminhaoViewModel caminhaoViewModel = new CaminhaoViewModel
+            {
+                Id = 1,
+                Descricao = "Caminhão Teste",
+                MarcaId = 1,
+                ModeloId = 1,
+                AnoFabricacao = 2021,
+                AnoModelo = 2021
+            };
+
+            Modelo modelo = new Modelo { Id = 1, Descricao = "Outros", MarcaId = 1, ModeloPermitido = false };
+            Marca marca = null;
+
+
+            _modeloRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.ModeloId).Returns(modelo);
+            _marcaRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.MarcaId).Returns(marca);
+
+            var exception = Assert.Throws<Exception>(() => caminhaoServico.Adicionar(caminhaoViewModel));
+
+            Assert.Equal("Marca não encontrada !", exception.Message);
+
+        }
+
+        [Fact]
+        public void Adicionar_ModeloNaoEncontrado()
+        {
+            CaminhaoViewModel caminhaoViewModel = new CaminhaoViewModel
+            {
+                Id = 1,
+                Descricao = "Caminhão Teste",
+                MarcaId = 1,
+                ModeloId = 1,
+                AnoFabricacao = 2021,
+                AnoModelo = 2021
+            };
+
+            Modelo modelo = null;
+            Marca marca = new Marca { Id = 1, Descricao = "Volvo" };
+
+
+            _modeloRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.ModeloId).Returns(modelo);
+            _marcaRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.MarcaId).Returns(marca);
+
+            var exception = Assert.Throws<Exception>(() => caminhaoServico.Adicionar(caminhaoViewModel));
+
+            Assert.Equal("Modelo não encontrado !", exception.Message);
+
+        }
+
+
+        [Fact]
+        public void Editar_MarcaNaoEncontrada()
+        {
+            CaminhaoViewModel caminhaoViewModel = new CaminhaoViewModel
+            {
+                Id = 1,
+                Descricao = "Caminhão Teste",
+                MarcaId = 1,
+                ModeloId = 1,
+                AnoFabricacao = 2021,
+                AnoModelo = 2021
+            };
+
+            Modelo modelo = new Modelo { Id = 1, Descricao = "Outros", MarcaId = 1, ModeloPermitido = false };
+            Marca marca = null;
+
+
+            _modeloRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.ModeloId).Returns(modelo);
+            _marcaRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.MarcaId).Returns(marca);
+
+            var exception = Assert.Throws<Exception>(() => caminhaoServico.Editar(caminhaoViewModel));
+
+            Assert.Equal("Marca não encontrada !", exception.Message);
+
+        }
+
+        [Fact]
+        public void Editar_ModeloNaoEncontrado()
+        {
+            CaminhaoViewModel caminhaoViewModel = new CaminhaoViewModel
+            {
+                Id = 1,
+                Descricao = "Caminhão Teste",
+                MarcaId = 1,
+                ModeloId = 1,
+                AnoFabricacao = 2021,
+                AnoModelo = 2021
+            };
+
+            Modelo modelo = null;
+            Marca marca = new Marca { Id = 1, Descricao = "Volvo" };
+
+
+            _modeloRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.ModeloId).Returns(modelo);
+            _marcaRepositorio.BuscarPorIdAsNoTracking(caminhaoViewModel.MarcaId).Returns(marca);
+
+            var exception = Assert.Throws<Exception>(() => caminhaoServico.Editar(caminhaoViewModel));
+
+            Assert.Equal("Modelo não encontrado !", exception.Message);
+
+        }
+        #endregion
+
+
+
         #region [Validação Adicionar Completo]
 
         [Fact]
@@ -351,6 +530,8 @@ namespace Volvo.Teste.Unitario.Serviço
 
         }
         #endregion
+
+
 
         #region [Validação Editar Completo]
 
@@ -396,6 +577,8 @@ namespace Volvo.Teste.Unitario.Serviço
         }
         #endregion
 
+
+
         #region [Validação Deletar Completo]
 
         [Fact]
@@ -424,5 +607,7 @@ namespace Volvo.Teste.Unitario.Serviço
 
         }
         #endregion
+
+
     }
 }
